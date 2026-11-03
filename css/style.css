@@ -1398,3 +1398,189 @@ footer a {
     opacity: 1;
     transform: translateY(0);
 }
+/* ==========================================================================
+   Supercharged Animations & Interactive Spotlight Effects
+   ========================================================================== */
+
+/* Live Render Demo Button */
+.btn-live-render {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+    padding: 12px 26px;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-live-render::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-live-render:hover::before {
+    left: 100%;
+}
+
+.btn-live-render:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.7);
+    filter: brightness(1.12);
+}
+
+.live-dot-pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 12px #34d399;
+    animation: livePulseRing 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes livePulseRing {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.35); opacity: 0.5; box-shadow: 0 0 18px #34d399; }
+}
+
+/* Hero Stats Counter Bar */
+.hero-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+    margin-bottom: 24px;
+}
+
+.hero-stat-card {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 14px 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+.hero-stat-num {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, #fff 20%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-stat-label {
+    font-size: 0.72rem;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+/* Interactive Animated Live Terminal Simulator inside Project */
+.project-live-terminal {
+    background: #060913;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 18px;
+    margin: 24px 0;
+    overflow: hidden;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header-bar {
+    background: #0c1120;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 7px;
+}
+
+.terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.terminal-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.terminal-stream-body {
+    padding: 16px 20px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    min-height: 150px;
+}
+
+.terminal-line-success {
+    color: #34d399;
+}
+
+.terminal-line-info {
+    color: #38bdf8;
+}
+
+.terminal-line-badge {
+    color: #c084fc;
+}
+
+/* Mouse Spotlight Card Glow */
+.spotlight-card {
+    position: relative;
+}
+
+.spotlight-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.12), transparent 80%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.spotlight-card:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
