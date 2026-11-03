@@ -1,0 +1,21 @@
+{
+  "name": "pavithran-v-portfolio",
+  "version": "1.0.0",
+  "description": "High-Impact Engineering Portfolio for Pavithran V - Target for MNCs",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "full-stack",
+    "python",
+    "django",
+    "fastapi",
+    "react",
+    "cyber-sentry"
+  ],
+  "author": "Pavithran V",
+  "license": "MIT"
+}
