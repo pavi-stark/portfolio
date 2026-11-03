@@ -1455,49 +1455,6 @@ footer a {
     50% { transform: scale(1.35); opacity: 0.5; box-shadow: 0 0 18px #34d399; }
 }
 
-/* Hero Stats Counter Bar */
-.hero-stats-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin-top: 28px;
-    margin-bottom: 24px;
-}
-
-.hero-stat-card {
-    background: rgba(15, 23, 42, 0.75);
-    border: 1px solid var(--border-subtle);
-    border-radius: 16px;
-    padding: 14px 12px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-stat-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(99, 102, 241, 0.5);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
-}
-
-.hero-stat-num {
-    font-size: 1.55rem;
-    font-weight: 800;
-    color: #fff;
-    background: linear-gradient(135deg, #fff 20%, var(--primary-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-stat-label {
-    font-size: 0.72rem;
-    font-family: var(--font-mono);
-    color: var(--text-secondary);
-    margin-top: 2px;
-}
-
 /* Interactive Animated Live Terminal Simulator inside Project */
 .project-live-terminal {
     background: #060913;
@@ -1579,8 +1536,4 @@ footer a {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .hero-stats-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+
